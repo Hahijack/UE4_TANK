@@ -35,6 +35,8 @@ public:
 
 	FTankDelegate OnDeath;
 
+	void AddTankHealth(float HpToAdd);
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Team")
 		bool TeamFlag = true;
 	UPROPERTY(EditAnywhere, Category = "Setup")

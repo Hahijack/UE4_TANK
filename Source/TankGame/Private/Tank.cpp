@@ -56,3 +56,8 @@ float ATank::GetHealthPercentage()
 	return float(CurrentHp / MaxHp);
 }
 
+void ATank::AddTankHealth(float HpToAdd)
+{
+	CurrentHp = FMath::Clamp<int32>(CurrentHp + HpToAdd, 0, MaxHp);
+}
+
