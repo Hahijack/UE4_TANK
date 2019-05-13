@@ -6,7 +6,8 @@
 #include "TankTurret.h"
 #include "Kismet/GameplayStatics.h"
 #include "Projectile.h"
-
+#include "GameFramework/Actor.h"
+#include "ConstructorHelpers.h"
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "TankAimingComponent.generated.h"
@@ -22,7 +23,6 @@ UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class TANKGAME_API UTankAimingComponent : public UActorComponent
 {
 	GENERATED_BODY()
-
 public:	
 	// Sets default values for this component's properties
 	UTankAimingComponent();
@@ -50,9 +50,9 @@ public:
 		float LaunachSpeed = 10000.0f;
 
 	UFUNCTION(BlueprintCallable, Category = "GamePlay")
-		void Fire();
+		void Fire(float addPower);
 	UPROPERTY(EditAnywhere, Category = "Setup")
-		TSubclassOf<AProjectile> ProjectileType;
+		TSubclassOf<AProjectile> ProjectileType;// = ConstructorHelpers::FClassFinder<AProjectile>(TEXT("/Game/Blueprints/Projectile/BP_Projectile.BP_Projectile")).Class;
 	UPROPERTY(BlueprintReadOnly)
 		EFiringState FiringState = EFiringState::Aiming;
 

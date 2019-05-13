@@ -61,3 +61,13 @@ void ATank::AddTankHealth(float HpToAdd)
 	CurrentHp = FMath::Clamp<int32>(CurrentHp + HpToAdd, 0, MaxHp);
 }
 
+void ATank::AddTankPower(float PowerToAdd)
+{
+	PowerAdd = FMath::Clamp<int32>(PowerAdd+PowerToAdd, 0, 50.0f);//最大伤害不高于50
+}
+
+float ATank::GetPowerAdd()
+{
+	return PowerAdd;
+}
+

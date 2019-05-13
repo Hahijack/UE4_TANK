@@ -30,7 +30,6 @@ AProjectile::AProjectile()
 	ExplosionForce->AttachTo(RootComponent);
 	ExplosionForce->SetAutoActivate(false);
 
-
 }
 
 // Called when the game starts or when spawned
@@ -45,6 +44,11 @@ void AProjectile::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+}
+
+void AProjectile::AddPower(float PowerAdd) {
+	ProjectileMinimumDamage += PowerAdd;
+	ProjectileBaseDamage += PowerAdd;
 }
 
 void AProjectile::LaunchProjectile(float Speed)

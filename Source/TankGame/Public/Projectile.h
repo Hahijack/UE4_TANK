@@ -56,6 +56,8 @@ public:
 
 	void LaunchProjectile(float Speed);
 
+	void AddPower(float PowerAdd);
+
 	UFUNCTION()
 		void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 };

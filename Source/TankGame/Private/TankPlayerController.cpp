@@ -36,6 +36,7 @@ void ATankPlayerController::AimToTarget()
 	}
 }
 
+
 bool ATankPlayerController::GetSightRayHitLocation(FVector & OutHitLocation)
 {
 	int32 ViewportSizeX, ViewportSizeY;

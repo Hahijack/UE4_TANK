@@ -36,6 +36,10 @@ public:
 	FTankDelegate OnDeath;
 
 	void AddTankHealth(float HpToAdd);
+	void AddTankPower(float PowerToAdd);
+
+	UFUNCTION(BlueprintPure, Category = "Tank")
+	float GetPowerAdd();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Team")
 		bool TeamFlag = true;
@@ -50,4 +54,7 @@ private:
 		float MaxHp = 100.0f;
 	UPROPERTY(VisibleAnywhere, Category = "Health")
 		float CurrentHp = MaxHp;
+	//增加伤害变量
+	UPROPERTY(EditAnywhere, Category = "PowerAdd")
+		float PowerAdd = 0.0f;
 };
